@@ -86,5 +86,5 @@ production:
   username: <%= ENV["DB_USERNAME"] ? ENV["DB_USERNAME"] : 'root'%>
   password: <%= ENV["DB_PASSWORD"] ? ENV["DB_PASSWORD"] : 'root'%>
   host: <%= ENV["DB_HOST"] ? ENV["DB_HOST"] : 'localhost'%>
-  port: <%= ENV["DB_PORT"] ? ENV["DB_PORT"] : '5432'%>
+  port: <%= ENV["DB_PORT"] ? ENV["DB_PORT"] : '5432'%>A
 #  password: <%= ENV["ENTRY_TASK_CHECKLIST_DATABASE_PASSWORD"] %>
