@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+    ruby:
+        image: ruby:3.0.0
+        container_name: entry-task-checklist-ruby
+        depends_on:
+            - postgres
+        restart: "no"
+        logging:
+            options:
+                max-size: "50m"
+        ports:
+            - 3000:3000
+        environment:
+            - DB_NAME=test
+            - DB_USERNAME=root
+            - DB_PASSWORD=root
+            - DB_HOST=postgres
+            - DB_PORT=5432
+        volumes:
+            - ./ruby:/app
+        command: bash -c "echo installing packages && cd /app && bundle install && /app/bin/rails server -b 0.0.0.0"
+
+    postgres:
+        image: 'postgres:latest'
+        container_name: entry-task-checklist-postgres
+        restart: "no"
+        logging:
+            options:
+                max-size: "50m"
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_USER=root
+            - POSTGRES_PASSWORD=root
+            - POSTGRES_DB=test
+        volumes:
+            - ./db-data/:/var/lib/postgresql/data/
