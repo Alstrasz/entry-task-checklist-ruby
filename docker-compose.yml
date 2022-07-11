@@ -18,7 +18,7 @@ services:
             - DB_HOST=postgres
             - DB_PORT=5432
         volumes:
-            - ./ruby:/app
+            - .:/app
         command: bash -c "echo installing packages && cd /app && bundle install && /app/bin/rails server -b 0.0.0.0"
 
     postgres:
