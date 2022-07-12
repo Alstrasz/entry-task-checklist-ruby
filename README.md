@@ -1,24 +1,23 @@
-# README
+# EntryTaskChecklist
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project done as an entry task for https://www.oblakogroup.ru/assignment/full-stack-developer.
 
-Things you may want to cover:
+It represents simple todo list with ability to check out todos, create new todos and projects.
 
-* Ruby version
+Frontend uses angular and material ui, backend - ruby on rails
 
-* System dependencies
+# To run
 
-* Configuration
+- bundle install
+- ./bin/rails db:migrate
+- ./bin/rails server
 
-* Database creation
+Requiers postgres to be run beforehand, settings can be passes as env variables
 
-* Database initialization
+OR 
 
-* How to run the test suite
+- docker-compose up
 
-* Services (job queues, cache servers, search engines, etc.)
+# Related projects
 
-* Deployment instructions
-
-* ...
+Frontend: https://github.com/Alstrasz/entry-task-checklist-angular
